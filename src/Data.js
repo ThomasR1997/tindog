@@ -1,6 +1,6 @@
-import rexImg from "./App/dog1.jpg";
-import bellaImg from "./App/dog2.jpg";
-import teddyImg from "./App/dog3.jpg";
+import teddyImg from "./images/dog1.jpg";
+import bellaImg from "./images/dog2.jpg";
+import rexImg from "./images/dog3.jpg";
 
 export const dogs = [
   {
