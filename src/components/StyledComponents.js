@@ -102,3 +102,12 @@ export const LikeIcon = styled.img`
   width: 40px;
   height: 36px;
 `;
+
+export const StyledImage = styled.img`
+  /* transform: rotate(-30deg);
+  position: fixed;
+  top: 6.5em;
+  left: 36.5em;
+
+  width: 10em; */
+`;
