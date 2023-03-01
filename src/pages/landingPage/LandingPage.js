@@ -14,6 +14,7 @@ import {
   StyledP,
   StyledPaw,
 } from "../../components/StyledComponents";
+
 import { dogs } from "../../Data";
 
 import profile from "../../images/profile-icon.png";
@@ -28,25 +29,41 @@ import { useState } from "react";
 export const LandingPage = () => {
   let myIndex = 0;
 
-  const [data, setData] = useState([dogs[myIndex]]);
+  const [index, setIndex] = useState(0);
+  const [data, setData] = useState([dogs[index]]);
 
-  const handleNope = () => {
-    // if (myIndex < dogs.length) {
-    //   myIndex = myIndex + 1;
-    // } else {
-    //   myIndex = 0;
-    // }
-
-    if (myIndex === 3) {
-      myIndex = 0;
+  const nextArrObj = () => {
+    if (index < dogs.length - 1) {
+      setIndex((prev) => prev + 1);
     } else {
-      myIndex++;
+      setIndex(0);
     }
-    console.log(myIndex);
-    setData([dogs[myIndex]]);
+
+    setData([dogs[index]]);
+    console.log(index);
   };
 
-  const handleLike = () => {};
+  const handleNope = () => {
+    document.getElementById("showNope").style.display = "block";
+    document.getElementById("activeNope").style.backgroundColor = "#FFE7EF";
+
+    setTimeout(() => {
+      document.getElementById("showNope").style.display = "none";
+      document.getElementById("activeNope").style.backgroundColor = "white";
+      nextArrObj();
+    }, 2000);
+  };
+
+  const handleLike = () => {
+    document.getElementById("showLike").style.display = "block";
+    document.getElementById("activeLike").style.backgroundColor = "#DBFFF4";
+
+    setTimeout(() => {
+      document.getElementById("showLike").style.display = "none";
+      document.getElementById("activeLike").style.backgroundColor = "white";
+      nextArrObj();
+    }, 2000);
+  };
 
   return (
     <AppDiv>
@@ -59,21 +76,23 @@ export const LandingPage = () => {
 
         <StyledChat src={chat} />
       </NavBar>
-      <StyledDiv style={{ backgroundImage: `url(${data[0].avatar})` }}>
+      <StyledDiv style={{ backgroundImage: `url(${data[myIndex].avatar})` }}>
         <StyledH1>
-          {data[0].name}, {data[0].age}
+          {data[myIndex].name}, {data[myIndex].age}
         </StyledH1>
-        <StyledP>{data[0].bio}</StyledP>
+        <StyledP>{data[myIndex].bio}</StyledP>
       </StyledDiv>
       <StyledFooter>
-        <StyledButton onClick={() => handleNope()}>
+        <StyledButton id="activeNope" onClick={() => handleNope()}>
           <NopeIcon src={nope} />
         </StyledButton>
 
-        <StyledButton like onClick={() => handleLike()}>
+        <StyledButton id="activeLike" like onClick={() => handleLike()}>
           <LikeIcon src={like} />
         </StyledButton>
       </StyledFooter>
+      <StyledImage id="showNope" src={nopeImg} />
+      <StyledImage id="showLike" src={likeImg} />
     </AppDiv>
   );
 };

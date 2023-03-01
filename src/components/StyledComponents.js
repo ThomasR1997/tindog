@@ -104,10 +104,11 @@ export const LikeIcon = styled.img`
 `;
 
 export const StyledImage = styled.img`
-  /* transform: rotate(-30deg);
-  position: fixed;
+  transform: rotate(-30deg);
+  position: absolute;
   top: 6.5em;
   left: 36.5em;
 
-  width: 10em; */
+  width: 10em;
+  display: none;
 `;
