@@ -26,12 +26,18 @@ import nopeImg from "../../images/nope-image.png";
 import likeImg from "../../images/like-image.png";
 import { useState } from "react";
 
+// Du må sikkert trykke 2 ganger på første knappen for å bytte til neste hund på appen.
 export const LandingPage = () => {
-  let myIndex = 0;
+  // Denne variabelen er 0 og blir ikke forandret såvidt som jeg vet.
+  let whyDoesThisWork = 0;
 
+  // Usestate som jeg vil bruke for index for å bla gjennom dogs arrayen min.
   const [index, setIndex] = useState(0);
+
+  // Usestate for dogs array med usestate index
   const [data, setData] = useState([dogs[index]]);
 
+  // Blar gjennom dogs array 0-1-2-0 osv.
   const nextArrObj = () => {
     if (index < dogs.length - 1) {
       setIndex((prev) => prev + 1);
@@ -40,9 +46,10 @@ export const LandingPage = () => {
     }
 
     setData([dogs[index]]);
-    console.log(index);
+    console.log(index, whyDoesThisWork);
   };
 
+  // Viser like eller dislike og bytter til neste hund etter 2 sec.
   const handleNope = () => {
     document.getElementById("showNope").style.display = "block";
     document.getElementById("activeNope").style.backgroundColor = "#FFE7EF";
@@ -65,6 +72,9 @@ export const LandingPage = () => {
     }, 2000);
   };
 
+  console.log(data[whyDoesThisWork].avatar);
+  // console.log(data[index].avatar);
+
   return (
     <AppDiv>
       <NavBar>
@@ -76,11 +86,14 @@ export const LandingPage = () => {
 
         <StyledChat src={chat} />
       </NavBar>
-      <StyledDiv style={{ backgroundImage: `url(${data[myIndex].avatar})` }}>
+      <StyledDiv
+        // Jeg vil ha index istedenfor whyDoesThisWork men det funker ikke.
+        style={{ backgroundImage: `url(${data[whyDoesThisWork].avatar})` }}
+      >
         <StyledH1>
-          {data[myIndex].name}, {data[myIndex].age}
+          {data[whyDoesThisWork].name}, {data[whyDoesThisWork].age}
         </StyledH1>
-        <StyledP>{data[myIndex].bio}</StyledP>
+        <StyledP>{data[whyDoesThisWork].bio}</StyledP>
       </StyledDiv>
       <StyledFooter>
         <StyledButton id="activeNope" onClick={() => handleNope()}>
