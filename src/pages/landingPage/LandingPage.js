@@ -28,6 +28,10 @@ import { useState } from "react";
 
 // Du må sikkert trykke 2 ganger på første knappen for å bytte til neste hund på appen.
 export const LandingPage = () => {
+  // Jeg vil bla gjennom dogs arrayen min når jeg trykker på enten dislike eller like knappen ved å bruke 2 useStates.
+  // 1 for å bytte index i arrayen og 1 for selve arrayen med indexen men det funker ikke.
+  // Men for en eller annen grunn så funker det med variablene WhyDoesThisWork som jeg ikke forstår hvorfor.
+
   // Denne variabelen er 0 og blir ikke forandret såvidt som jeg vet.
   let whyDoesThisWork = 0;
 
