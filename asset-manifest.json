@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/tindog/static/css/main.f46d63ac.css",
+    "main.js": "/tindog/static/js/main.e26adeac.js",
+    "static/js/787.af7e1130.chunk.js": "/tindog/static/js/787.af7e1130.chunk.js",
+    "static/media/dog1.jpg": "/tindog/static/media/dog1.1e87fd19661dc0acd6a9.jpg",
+    "static/media/dog2.jpg": "/tindog/static/media/dog2.e6756ec727092751267d.jpg",
+    "static/media/dog3.jpg": "/tindog/static/media/dog3.d33df670cb9f0ce8986d.jpg",
+    "static/media/nope-image.png": "/tindog/static/media/nope-image.be4e02040a6c06f73e76.png",
+    "static/media/like-image.png": "/tindog/static/media/like-image.f973ccdf8ff32e7e8a1b.png",
+    "index.html": "/tindog/index.html",
+    "main.f46d63ac.css.map": "/tindog/static/css/main.f46d63ac.css.map",
+    "main.e26adeac.js.map": "/tindog/static/js/main.e26adeac.js.map",
+    "787.af7e1130.chunk.js.map": "/tindog/static/js/787.af7e1130.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f46d63ac.css",
+    "static/js/main.e26adeac.js"
+  ]
+}
