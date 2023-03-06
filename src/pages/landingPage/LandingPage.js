@@ -15,6 +15,7 @@ import {
   StyledPaw,
 } from "../../components/StyledComponents";
 
+// Dogs data array
 import { dogs } from "../../Data";
 
 import profile from "../../images/profile-icon.png";
@@ -24,17 +25,22 @@ import nope from "../../images/nope-icon.png";
 import like from "../../images/like-icon.png";
 import nopeImg from "../../images/nope-image.png";
 import likeImg from "../../images/like-image.png";
+
 import { useEffect, useState } from "react";
 
 export const LandingPage = () => {
+  // Index state for data array
   const [index, setIndex] = useState(0);
 
+  // State for data array with index
   const [data, setData] = useState(dogs[index]);
 
+  // Updates the data state each time the index changes
   useEffect(() => {
     setData(dogs[index]);
   }, [index]);
 
+  // Cycles through the array
   const nextArrObj = () => {
     if (index < dogs.length - 1) {
       setIndex((prev) => prev + 1);
@@ -43,6 +49,7 @@ export const LandingPage = () => {
     }
   };
 
+  // Shows like/dislike when the button is clicked and changes to next dog after a short delay
   const handleNope = () => {
     document.getElementById("showNope").style.display = "block";
     document.getElementById("activeNope").style.backgroundColor = "#FFE7EF";
@@ -50,8 +57,9 @@ export const LandingPage = () => {
     setTimeout(() => {
       document.getElementById("showNope").style.display = "none";
       document.getElementById("activeNope").style.backgroundColor = "white";
+
       nextArrObj();
-    }, 2000);
+    }, 1000);
   };
 
   const handleLike = () => {
@@ -62,7 +70,7 @@ export const LandingPage = () => {
       document.getElementById("showLike").style.display = "none";
       document.getElementById("activeLike").style.backgroundColor = "white";
       nextArrObj();
-    }, 2000);
+    }, 1000);
   };
 
   return (

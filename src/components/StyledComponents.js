@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Container for the app
 export const AppDiv = styled.div`
   max-width: 410px;
   margin: 0 auto;
@@ -11,6 +12,7 @@ export const AppDiv = styled.div`
   align-items: center;
 `;
 
+// Navbar div
 export const NavBar = styled.div`
   display: flex;
   justify-content: space-between;
@@ -20,6 +22,7 @@ export const NavBar = styled.div`
   width: 380px;
 `;
 
+// Styling for the navbar paw icon
 export const SelectedDiv = styled.div`
   background-color: rgb(250, 100, 90);
   padding: 0.5em 1.5em;
@@ -30,6 +33,7 @@ export const SelectedDiv = styled.div`
   align-items: center;
 `;
 
+// Styling for the navbar icons
 export const StyledAvatar = styled.img`
   width: 32px;
   height: 34px;
@@ -45,6 +49,7 @@ export const StyledChat = styled.img`
   height: 30px;
 `;
 
+// Styling for the main content
 export const StyledDiv = styled.div`
   background-size: cover;
   background-position: center;
@@ -59,6 +64,7 @@ export const StyledDiv = styled.div`
   justify-content: flex-end;
 `;
 
+// Text styling for main content
 export const StyledH1 = styled.h1`
   color: white;
   margin: 0 0.5em;
@@ -69,6 +75,7 @@ export const StyledP = styled.p`
   margin: 0 1em 1em;
 `;
 
+// Styling for the footer
 export const StyledFooter = styled.div`
   width: 410px;
   height: 100px;
@@ -78,6 +85,7 @@ export const StyledFooter = styled.div`
   align-items: center;
 `;
 
+// Styling for the like/dislike button
 export const StyledButton = styled.button`
   border-radius: 50%;
   background-color: white;
@@ -93,6 +101,7 @@ export const StyledButton = styled.button`
   }
 `;
 
+// Styling for the like/dislike button icons
 export const NopeIcon = styled.img`
   width: 26px;
   height: 26px;
@@ -103,6 +112,7 @@ export const LikeIcon = styled.img`
   height: 36px;
 `;
 
+// Styling for the like/dislike image
 export const StyledImage = styled.img`
   transform: rotate(-30deg);
   position: absolute;
